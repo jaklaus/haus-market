@@ -15,6 +15,7 @@ const Nav = () => {
                 <div className="nav-links-container">
                     <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/">Home</NavLink>
                     <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/category-page">Category Page</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/sign-in">Sign-In</NavLink>
                     <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/cart">Cart</NavLink>
                 </div>
             </div>
