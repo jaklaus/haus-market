@@ -11,6 +11,7 @@ const Nav = () => {
                 
                 <NavLink className="logo-link" to="/">
                     <img src={logo} alt="Haus Market Logo"/>
+                    <h3 className="site-name">Haus Market</h3>
                 </NavLink>
                 <div className="nav-links-container">
                     <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/">Home</NavLink>
