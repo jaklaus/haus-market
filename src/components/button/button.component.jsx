@@ -1,6 +1,6 @@
 import './button.styles.scss'
 const BUTTON_TYPES_CLASSES = {
-    externalButton: 'external-button',
+    external: 'external',
     inverted: 'inverted',
     primary: 'primary'
 }

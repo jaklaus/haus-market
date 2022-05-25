@@ -2,14 +2,16 @@
     border: 0;
     background-color: #000;
     color: #fff;
-    width: 120px;
+    width: 160px;
     height: 50px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s, color 0.1s;
+    &.external{ background-color: #464cba;}
+    &.external:hover{ color: #464cba;}
     &:hover{
-        background-color: #f1f1f1;
+        background-color: #fff;
         color: #000;
         border: 1px solid #000;
         transition: background-color 0.2s, color 0.1s;

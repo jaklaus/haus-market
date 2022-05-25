@@ -1,4 +1,4 @@
-.sign-up-container{
+.sign-in-container{
     display: flex;
     flex-direction: column;
     width: 600px;
@@ -6,4 +6,5 @@
     h2, p{
         margin: 0.5rem 0;
     }
+    button.external{ float: right;}
 }
