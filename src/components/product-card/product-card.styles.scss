@@ -1,0 +1,17 @@
+.product-card-container {
+    .img-container {
+        max-height: 340px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .product-card-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+}
