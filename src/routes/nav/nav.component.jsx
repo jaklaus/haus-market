@@ -1,7 +1,7 @@
 import { Fragment, useContext } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
-import { CartDropdownContext } from "../../contexts/cart-dropdown.context";
+import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import CartIcon from "../../components/cart-icon/cart-icon.component";
@@ -15,7 +15,7 @@ import logo from '../../assets/house.jpg';
 const Nav = () => {
     let activeClassName = "active-link nav-link";
     const { currentUser } = useContext(UserContext);
-    const {cartDropdownOpen} = useContext(CartDropdownContext);
+    const {isCartOpen} = useContext(CartContext);
 
     return (
         <Fragment>
@@ -35,9 +35,8 @@ const Nav = () => {
                         <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/auth">Sign In</NavLink>
                     }
                     <CartIcon/>
-                    
                 </div>
-                {cartDropdownOpen && <CartDropdown/>}
+                {isCartOpen && <CartDropdown/>}
             </div>
             <Outlet />
         </Fragment>
