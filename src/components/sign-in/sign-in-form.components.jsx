@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import Button from "../../components/button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../../components/button/button.component";
 import FormInput from "../../components/form-input/form-input.component";
 import { UserContext } from "../../contexts/user.context";
 import './sign-in-form.styles.scss';
@@ -53,8 +53,8 @@ const SignInForm = () => {
             <form onSubmit={handleOnSubmit}>
                 <FormInput label="Email" type="email" name="email" id="sign-in-email" required onChange={handleChange} value={email} />
                 <FormInput label="Password" type="password" name="password" id="sign-in-password" required onChange={handleChange} value={password} />
-                <Button type="submit" buttonType='primary'>Sign In</Button>
-                <Button type="button" onClick={logGoogleUser} buttonType="external">Sign In With Google</Button>
+                <Button type="submit" >Sign In</Button>
+                <Button buttonType={BUTTON_TYPE_CLASSES.external} type="button" onClick={logGoogleUser} >Sign In With Google</Button>
             </form>
         </div>
     );

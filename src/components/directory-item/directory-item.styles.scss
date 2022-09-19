@@ -1,4 +1,4 @@
-.category-container {
+.directory-item-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@
         transition: transform 0.3s;
     }
     &:hover .background-image{ transform: scale(1.03); transition: transform 0.3s;}
-    .category-body-container{
+    .directory-body-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -33,5 +33,5 @@
         transition: background-color 0.3s;
         h1{ margin: 0; }
     }
-    &:hover .category-body-container{background-color: rgb(255 255 255 / 100%); transition: background-color 0.3s;}
+    &:hover .directory-body-container{background-color: rgb(255 255 255 / 100%); transition: background-color 0.3s;}
 }

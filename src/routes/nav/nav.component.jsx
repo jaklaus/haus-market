@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from '../../utils/firebase/firebase.utils';
@@ -7,37 +7,38 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import './nav.styles.scss'
+// import './nav.styles.scss'
 
 import logo from '../../assets/house.jpg';
 
+import { StyledNavContainer, StyledLogoLink, StyledNavLinksContainer, StyledNavLink } from "./nav.styles";
+
 
 const Nav = () => {
-    let activeClassName = "active-link nav-link";
     const { currentUser } = useContext(UserContext);
     const {isCartOpen} = useContext(CartContext);
 
     return (
         <Fragment>
-            <div className="nav">
+            <StyledNavContainer>
 
-                <NavLink className="logo-link" to="/">
+                <StyledLogoLink to="/">
                     <img src={logo} alt="Haus Market Logo" />
                     <h3 className="site-name">Haus Market</h3>
-                </NavLink>
-                <div className="nav-links-container">
-                    <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/">Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/shop">Shop</NavLink>
+                </StyledLogoLink>
+                <StyledNavLinksContainer>
+                    <StyledNavLink to="/">Home</StyledNavLink>
+                    <StyledNavLink to="/shop">Shop</StyledNavLink>
 
                     {currentUser ?
-                        <span className="nav-link" onClick={signOutUser}>Sign Out</span>
+                        <StyledNavLink as='span' onClick={signOutUser}>Sign Out</StyledNavLink>
                         :
-                        <NavLink className={({ isActive }) => isActive ? activeClassName : 'nav-link'} to="/auth">Sign In</NavLink>
+                        <StyledNavLink to="/auth">Sign In</StyledNavLink>
                     }
                     <CartIcon/>
-                </div>
+                </StyledNavLinksContainer>
                 {isCartOpen && <CartDropdown/>}
-            </div>
+            </StyledNavContainer>
             <Outlet />
         </Fragment>
     );
